@@ -13,6 +13,19 @@ public class Main {
             }
             if (input.startsWith("echo")) {
                 System.out.println(input.substring(5));
+            } else if (input.startsWith("type")) {
+                String inputType = input.substring(5);
+                switch (inputType) {
+                    case "exit":
+                    case "echo":
+                    case "type":
+                        System.out.println(inputType + " is a shell builtin");
+                        break;
+
+                    default:
+                        System.out.println(inputType + ": not found");
+                        break;
+                }
             } else {
                 System.out.println(input + ": command not found");
             }
